@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# Data files (không push dataset lên GitHub vì quá lớn)
+data/raw/*.csv
+data/processed/*.csv
+data/processed/resampled/*.csv
+
+# Models (file .pkl có thể lớn)
+models/*.pkl
+
+# Results (có thể push hoặc không)
+# results/*.png
+# results/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Config cá nhân (nếu có API keys)
+# config.yaml

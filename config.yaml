@@ -1,0 +1,34 @@
+# Cấu hình dự án Stroke Prediction
+data:
+  raw_path: "data/raw/healthcare-dataset-stroke-data.csv"
+  processed_dir: "data/processed"
+  test_size: 0.2
+  random_state: 42
+
+preprocessing:
+  knn_neighbors: 5
+  scale_features:
+    - age
+    - avg_glucose_level
+    - bmi
+
+imbalanced:
+  method: "SMOTE" # SMOTE, ADASYN, RandomOverSampling
+  sampling_strategy: "auto"
+  k_neighbors: 5
+
+training:
+  cv_folds: 5
+  hyperparameter_tuning: false # Set true nếu muốn GridSearch (chậm)
+  models:
+    logistic_regression: true
+    random_forest: true
+    xgboost: true
+    lightgbm: true
+
+evaluation:
+  metrics:
+    - recall
+    - f1_score
+    - roc_auc
+  visualizations: true
